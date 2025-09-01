@@ -19,3 +19,21 @@ require "lazy_setup"
 require "polish"
 
 
+local null_ls = require("null-ls")
+
+null_ls.setup({
+  sources = {
+    -- Здесь перечислены источники для форматирования
+    null_ls.builtins.formatting.gofmt,
+    null_ls.builtins.formatting.goimports,
+  },
+  on_attach = function(client, bufnr)
+    -- Отключаем автоматическое форматирование при сохранении
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      callback = function()
+        -- Ничего не делаем, чтобы отключить форматирование
+      end,
+    })
+  end,
+})

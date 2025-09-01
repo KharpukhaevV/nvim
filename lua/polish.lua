@@ -13,6 +13,7 @@ vim.api.nvim_set_keymap('i', '<C-l>', '<Right>', { noremap = true })
 vim.api.nvim_set_keymap('i', '<C-j>', '<Down>', { noremap = true })
 vim.api.nvim_set_keymap('i', '<C-k>', '<Up>', { noremap = true })
 
-vim.api.nvim_set_keymap('i', '<C-e>', '<C-o>e', { noremap = true })  -- Переместить на конец слова
-vim.api.nvim_set_keymap('i', '<C-b>', '<C-o>b', { noremap = true }) 
+vim.api.nvim_set_keymap("n", "<C-M-l>", ":lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('i', '<C-e>', '<C-o>e', { noremap = true })  -- Переместить на конец слова
+-- vim.api.nvim_set_keymap('i', '<C-b>', '<C-o>b', { noremap = true }) 
 -- vim.opt.expandtab = true  -- Заменять табы на пробелы
