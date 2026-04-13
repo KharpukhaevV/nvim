@@ -1,15 +1,38 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
--- Customize Treesitter
+-- Treesitter конфигурация с подсветкой Go и других языков
 
 ---@type LazySpec
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
     ensure_installed = {
+      "go",
+      "gomod",
+      "gosum",
+      "gowork",
       "lua",
       "vim",
-      -- add more arguments for adding more treesitter parsers
+      "html",
+      "json",
+      "yaml",
+      "toml",
+      "markdown",
+      "markdown_inline",
+      "css",
+      "javascript",
+      "typescript",
+      "tsx",
+      "regex",
+      "bash",
+      "dockerfile",
+      "gitignore",
+      "query",
+      "vimdoc",
+    },
+    highlight = {
+      enable = true,
+    },
+    indent = {
+      enable = true,
     },
   },
 }

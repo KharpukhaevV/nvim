@@ -35,5 +35,5 @@ endfunction
 vim.api.nvim_set_keymap('i', '<C-z>', '<C-o>:call UndoInInsertMode()<CR>', { noremap = true })
 
 -- vim.api.nvim_set_keymap('i', '<C-e>', '<C-o>e', { noremap = true })  -- Переместить на конец слова
--- vim.api.nvim_set_keymap('i', '<C-b>', '<C-o>b', { noremap = true }) 
+-- vim.api.nvim_set_keymap('i', '<C-b>', '<C-o>b', { noremap = true })
 -- vim.opt.expandtab = true  -- Заменять табы на пробелы

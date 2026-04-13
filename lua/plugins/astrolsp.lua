@@ -14,7 +14,7 @@ return {
     features = {
       codelens = true, -- enable/disable codelens refresh on start
       inlay_hints = false, -- enable/disable inlay hints on start
-      semantic_tokens = true, -- enable/disable semantic token highlighting
+      semantic_tokens = false, -- включаем для точной подсветки Go
     },
     -- customize lsp formatting options
     formatting = {
