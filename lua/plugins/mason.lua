@@ -11,16 +11,22 @@ return {
     opts = {
       -- Make sure to use the names found in `:Mason`
       ensure_installed = {
-        -- install language servers
+        -- Go language server and tools
+        "gopls",           -- Go LSP
+        "gofumpt",         -- Строгий форматтер для Go
+        "goimports",       -- Организация импортов
+        "gomodifytags",    -- Добавление/удаление тегов структур
+        "impl",            -- Генерация методов интерфейса
+        "delve",           -- Go debugger
+        
+        -- Lua
         "lua-language-server",
-
-        -- install formatters
         "stylua",
 
-        -- install debuggers
+        -- Debuggers
         "debugpy",
 
-        -- install any other package
+        -- Other tools
         "tree-sitter-cli",
       },
     },

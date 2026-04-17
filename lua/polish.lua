@@ -59,3 +59,68 @@ vim.api.nvim_set_keymap('i', '<C-z>', '<C-o>:call UndoInInsertMode()<CR>', { nor
 -- vim.api.nvim_set_keymap('i', '<C-b>', '<C-o>b', { noremap = true })
 -- vim.opt.expandtab = true  -- Заменять табы на пробелы
 
+-- Настройка sessionoptions для auto-session
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
+-- ============================================
+-- Автокоманды для Go разработки (из статьи)
+-- ============================================
+
+-- Автосортировка импортов при сохранении Go файлов - ОТКЛЮЧЕНО
+-- vim.api.nvim_create_autocmd('BufWritePre', {
+--   pattern = '*.go',
+--   callback = function()
+--     local params = vim.lsp.util.make_range_params(nil, vim.lsp.util._get_offset_encoding())
+--     params.context = { only = {'source.organizeImports'} }
+--     local result = vim.lsp.buf_request_sync(0, 'textDocument/codeAction', params, 3000)
+--     for _, res in pairs(result or {}) do
+--       for _, r in pairs(res.result or {}) do
+--         if r.edit then
+--           vim.lsp.util.apply_workspace_edit(r.edit, vim.lsp.util._get_offset_encoding())
+--         else
+--           vim.lsp.buf.execute_command(r.command)
+--         end
+--       end
+--     end
+--   end,
+-- })
+
+-- Форматирование Go файлов при сохранении - ОТКЛЮЧЕНО
+-- vim.api.nvim_create_autocmd('BufWritePre', {
+--   pattern = '*.go',
+--   callback = function()
+--     vim.lsp.buf.format({ timeout_ms = 3000 })
+--   end
+-- })
+
+-- Удаление trailing whitespace при сохранении - ОТКЛЮЧЕНО
+-- local TrimWhiteSpaceGrp = vim.api.nvim_create_augroup('TrimWhiteSpaceGrp', {})
+-- vim.api.nvim_create_autocmd('BufWritePre', {
+--   group = TrimWhiteSpaceGrp,
+--   pattern = '*',
+--   command = '%s/\\s\\+$//e',
+-- })
+
+-- Подсветка скопированного текста
+local YankHighlightGrp = vim.api.nvim_create_augroup('YankHighlightGrp', {})
+vim.api.nvim_create_autocmd('TextYankPost', {
+  group = YankHighlightGrp,
+  pattern = '*',
+  callback = function()
+    vim.highlight.on_yank({
+      higroup = 'IncSearch',
+      timeout = 300,
+    })
+  end,
+})
+
+-- Отключить автокомментирование новой строки
+vim.api.nvim_create_autocmd('BufEnter', {
+  pattern = '*',
+  callback = function()
+    vim.opt.formatoptions:remove('c')
+    vim.opt.formatoptions:remove('r')
+    vim.opt.formatoptions:remove('o')
+  end
+})
+
