@@ -14,7 +14,7 @@ return {
     features = {
       codelens = true, -- enable/disable codelens refresh on start
       inlay_hints = false, -- enable/disable inlay hints on start
-      semantic_tokens = false, -- включаем для точной подсветки Go
+      semantic_tokens = true, -- включаем для точной подсветки Go
     },
     -- customize lsp formatting options
     formatting = {
@@ -92,6 +92,10 @@ return {
           cond = function(client)
             return client.supports_method "textDocument/semanticTokens/full" and vim.lsp.semantic_tokens ~= nil
           end,
+        },
+        ["<Leader>lx"] = {
+          function() vim.cmd("LspRestart") end,
+          desc = "Restart LSP client",
         },
       },
     },

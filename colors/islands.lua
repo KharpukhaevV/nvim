@@ -66,8 +66,8 @@ hl(0, "goFuncDecl", { fg = "#cf8e6d" })
 hl(0, "goStructDecl", { fg = "#cf8e6d" })
 hl(0, "goStructDef", { fg = "#bcbec4" })
 hl(0, "goField", { fg = "#c77dbb" })
-hl(0, "goReceiverVar", { fg = "#56a8f5" })
-hl(0, "goParamName", { fg = "#56a8f5" })
+hl(0, "goReceiverVar", { fg = "#bcbec4" })
+hl(0, "goParamName", { fg = "#bcbec4" })
 hl(0, "goEnumDecl", { fg = "#cf8e6d" })
 hl(0, "goEnumDef", { fg = "#bcbec4" })
 hl(0, "goTypeDef", { fg = "#56a8f5" })
@@ -95,7 +95,7 @@ hl(0, "goExternalType", { fg = "#56a8f5" })
 hl(0, "goSpaceError", { fg = "#f75464" })
 hl(0, "goDeclarationObj", { fg = "#bcbec4" })
 hl(0, "goPredeclaredConst", { fg = "#c77dbb" })
-hl(0, "goPredeclaredType", { fg = "#bcbec4" })
+hl(0, "goPredeclaredType", { fg = "#cf8e6d" })
 
 -- === TREE-SITTER (наши кастомные capture groups) ===
 hl(0, "@keyword.all", { fg = "#cf8e6d" })
@@ -116,15 +116,15 @@ hl(0, "@label", { fg = "#cf8e6d" })
 hl(0, "@function", { fg = "#56a8f5" })
 hl(0, "@function.call", { fg = "#56a8f5" })
 hl(0, "@function.builtin", { fg = "#56a8f5" })
-hl(0, "@function.method", { fg = "#57aaf7" })
-hl(0, "@function.method.call", { fg = "#57aaf7" })
-hl(0, "@method", { fg = "#57aaf7" })
-hl(0, "@method.call", { fg = "#57aaf7" })
+hl(0, "@function.method", { fg = "#56a8f5" })
+hl(0, "@function.method.call", { fg = "#56a8f5" })
+hl(0, "@method", { fg = "#56a8f5" })
+hl(0, "@method.call", { fg = "#56a8f5" })
 hl(0, "@constructor", { fg = "#56a8f5" })
 
 -- Типы — голубой (contestUseCase, UserContext)
 hl(0, "@type", { fg = "#56a8f5" })
-hl(0, "@type.builtin", { fg = "#bcbec4" })
+hl(0, "@type.builtin", { fg = "#cf8e6d" })
 hl(0, "@type.definition", { fg = "#56a8f5" })
 hl(0, "@type.qualifier", { fg = "#cf8e6d" })
 hl(0, "@structure", { fg = "#56a8f5" })
@@ -150,9 +150,9 @@ hl(0, "@string.special.path", { fg = "#5c92ff" })
 
 hl(0, "@variable", { fg = "#bcbec4" })
 hl(0, "@variable.builtin", { fg = "#c77dbb" })
-hl(0, "@variable.parameter", { fg = "#56a8f5" })
-hl(0, "@parameter", { fg = "#56a8f5" })
-hl(0, "@receiver", { fg = "#56a8f5" })
+hl(0, "@variable.parameter", { fg = "#bcbec4" })
+hl(0, "@parameter", { fg = "#bcbec4" })
+hl(0, "@receiver", { fg = "#bcbec4" })
 hl(0, "@variable.member", { fg = "#c77dbb" })
 hl(0, "@field", { fg = "#c77dbb" })
 hl(0, "@property", { fg = "#c77dbb" })
@@ -238,14 +238,14 @@ hl(0, "DiffRemoved", { fg = "#868a91" })
 hl(0, "IndentBlanklineChar", { fg = "#323438" })
 hl(0, "IndentGuid", { fg = "#323438" })
 hl(0, "IndentBlanklineContextChar", { fg = "#4e5157" })
-hl(0, "WinBar", { fg = "#9da0a8", bg = "#2b2d30" })
-hl(0, "WinBarNC", { fg = "#6f737a", bg = "#2b2d30" })
+hl(0, "WinBar", { fg = "#9da0a8", bg = "#191a1c" })
+hl(0, "WinBarNC", { fg = "#6f737a", bg = "#191a1c" })
 hl(0, "Whitespace", { fg = "#6f737a" })
 hl(0, "NonText", { fg = "#6f737a" })
 hl(0, "SpecialKey", { fg = "#6f737a" })
-hl(0, "TabLine", { fg = "#6f737a", bg = "#2b2d30" })
-hl(0, "TabLineSel", { fg = "#dfe1e5", bg = "#2b2d30" })
-hl(0, "TabLineFill", { bg = "#2b2d30" })
+hl(0, "TabLine", { fg = "#6f737a", bg = "#191a1c" })
+hl(0, "TabLineSel", { fg = "#dfe1e5", bg = "#191a1c", bold = true })
+hl(0, "TabLineFill", { bg = "#191a1c" })
 hl(0, "Title", { fg = "#ced0d6", bold = true })
 hl(0, "Underlined", { fg = "#548af7", sp = "#548af7", underline = true })
 hl(0, "Todo", { fg = "#8bb33d", bold = true })
@@ -267,7 +267,7 @@ hl(0, "LogVerbose", { fg = "#56a8f5" })
 hl(0, "LogDebug", { fg = "#bcbec4" })
 
 -- Breadcrumbs
-hl(0, "BreadcrumbsCurrent", { fg = "#dfe1e5", bg = "#2b2d30" })
+hl(0, "BreadcrumbsCurrent", { fg = "#dfe1e5", bg = "#191a1c" })
 hl(0, "BreadcrumbsDefault", { fg = "#9da0a8" })
 hl(0, "BreadcrumbsInactive", { fg = "#6f737a" })
 
@@ -313,3 +313,19 @@ hl(0, "DebugConsoleInput", { fg = "#6aab73", italic = true })
 
 -- Template variables
 hl(0, "TemplateVariable", { fg = "#b189f5" })
+
+-- === NEO-TREE ===
+hl(0, "Directory",              { fg = "#7aabcf" })
+hl(0, "NeoTreeDirectoryName",   { fg = "#7aabcf" })
+hl(0, "NeoTreeDirectoryIcon",   { fg = "#7aabcf" })
+hl(0, "NeoTreeRootName",        { fg = "#7aabcf", bold = true })
+
+-- Git статус в файловом дереве (GoLand Islands Dark, приглушённые)
+hl(0, "NeoTreeGitAdded",        { fg = "#57966a" }) -- новый файл — приглушённый зелёный
+hl(0, "NeoTreeGitUntracked",    { fg = "#57966a" }) -- не отслеживается — тот же зелёный
+hl(0, "NeoTreeGitModified",     { fg = "#4a86b8" }) -- изменён — приглушённый синий
+hl(0, "NeoTreeGitStaged",       { fg = "#4e9e6e" }) -- в индексе — чуть ярче зелёный
+hl(0, "NeoTreeGitDeleted",      { fg = "#8c6060" }) -- удалён — приглушённый красно-серый
+hl(0, "NeoTreeGitConflict",     { fg = "#b07c44" }) -- конфликт — приглушённый оранжевый
+hl(0, "NeoTreeGitIgnored",      { fg = "#4e5157" }) -- игнорируется — тёмно-серый
+hl(0, "NeoTreeGitRenamed",      { fg = "#4a86b8" }) -- переименован — как изменённый
