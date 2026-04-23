@@ -117,8 +117,16 @@ return {
           end,
         },
         ["<Leader>lx"] = {
-          function() vim.cmd("LspRestart") end,
-          desc = "Restart LSP client",
+          function()
+            local clients = vim.lsp.get_active_clients()
+            for _, client in ipairs(clients) do
+              vim.lsp.stop_client(client.id, true)
+            end
+            vim.defer_fn(function()
+              vim.cmd('edit')
+            end, 100)
+          end,
+          desc = "Full LSP reload",
         },
       },
     },
